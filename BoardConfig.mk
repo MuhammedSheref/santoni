@@ -33,4 +33,24 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000
 
-include device/generic/twrpbuilder/BoardConfig64.mk
+# Architecture
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
+TARGET_CPU_VARIANT := generic
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := cortex-a9
+
+ENABLE_CPUSETS := true
+ENABLE_SCHEDBOOST := true
+
+# TWRP
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+TW_THEME := portrait_hdpi
+TW_INCLUDE_CRYPTO := true
+RECOVERY_SDCARD_ON_DATA := true
